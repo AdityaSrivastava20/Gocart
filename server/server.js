@@ -24,8 +24,6 @@ await connectCloudinary();
 const allowedOrigins = ['http://localhost:5173'];
 
 
-
-
 // Middleware Configuration
 app.use(express.json());
 app.use(cookieParser());
