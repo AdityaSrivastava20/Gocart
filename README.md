@@ -19,11 +19,77 @@ Gocart is a full-stack web application built with a modern React frontend and a 
 ## Project Structure
 
 ```
-Gocart/
-├── client/   # React + Vite frontend
-├── server/   # Node.js + Express backend
-├── .gitignore
-├── README.md
+GoCart/
+├── server/                   # Backend API server
+│   ├── config/                # Configuration files
+│   │   ├── cloudinary.js      # Cloudinary configuration (for image uploads)
+│   │   └── db.js              # Database connection setup (e.g., MongoDB)
+        └── multer.js          # handle multipart/form-data
+│   ├── controllers/           # Request handlers and business logic
+│   │   ├── user.controller.js     # User authentication & account management
+│   │   ├── cart.controller.js     # collection management
+│   │   ├── order.controller.js    # Order controller
+│   │   ├── product.controller.js  # Product controller
+│   │   ├── seller.controller.js   # Seller controller
+│   │   ├── address.controller.js  # user address controller
+│   │   
+│   ├── middleware/            # Custom middleware for request processing
+│   │   ├── auth.Middleware.js        # Admin authentication checks
+│   │   └── authSeller.middleware.js  # Seller authentication checks
+│   ├── models/                # Mongoose models for MongoDB collections
+│   │   ├── address.model.js     # Address user model
+│   │   ├── order.model.js       # product order model
+│   │   ├── product.model.js     # Product model
+│   │   ├── user.model.js        # User model
+│   │   
+│   ├── routes/               # API endpoints
+│   │   ├── address.route.js   # user address management routes
+│   │   ├── cart.route.js      # Cart routes
+│   │   ├── order.route.js     # Order routes
+│   │   ├── product.route.js   # Product routes
+│   │   ├── seller.route.js    # Seller routes
+│   │   ├── user.route.js      # User authentication routes
+│   │ 
+│   ├── .env                  # Environment variables (DB connection, API keys, etc.)
+│   ├── package.json           # Backend dependencies & scripts
+│   └── server.js              # Main entry point for backend server
+│
+├── frontend/                  # React frontend (client application)
+│   ├── src/
+│   │   ├── assets/                # Static files: images, SVGs, etc.
+│   │   ├── components/            # Reusable UI components
+│   │   │   ├── seller/            # Seller page
+│   │   │   ├── BestSeller.jsx     # Best seller compnent
+│   │   │   ├── BottomBanner.jsx   # Banner component
+│   │   │   ├── Categories.jsx     # Categories component
+│   │   │   ├── Footer.jsx         # Footer component
+│   │   │   ├── Loading.jsx        # Loading component
+│   │   │   ├── Login.jsx          # Login page
+│   │   │   ├── MainBanner.jsx     # Main component
+│   │   │   ├── Navbar.jsx         # Navbar component
+│   │   │   ├── NewsLetter.jsx     # News Letter component
+│   │   │   └── ProductCard.jsx    # Product card component
+│   │   ├── context/               # React Context providers for global state
+│   │   │   ├── AppContext.jsx        # User authentication state
+│   │   ├── pages/                  # Page-level components for routing
+│   │   │   ├── seller/              # Admin dashboard/pages 
+│   │   │   ├── AddAddress.jsx       # Add Address page
+│   │   │   ├── AllProducts.jsx      # All Products page
+│   │   │   ├── Cart.jsx             # Shopping cart page
+│   │   │   ├── Contact.jsx          # Contact form page
+│   │   │   ├── Home.jsx             # Homepage
+│   │   │   ├── MyOrders.jsx         # User order page
+│   │   │   ├── Products.jsx         # Product listing page
+│   │   │   ├── ProductDetails.jsx   # Single product detail page
+│   │   │   ├── Products.jsx         # Product listing page
+│   │   ├── index.css                # Global and modular stylesheets
+│   │   ├── App.jsx                # Main React component (routing, layout)
+│   │   └── main.jsx               # React app entry point
+│   ├── index.html                 # Main HTML file
+│   ├── package.json               # Frontend dependencies & scripts
+│   └── vite.config.js             # Vite build configuration
+│
+└── README.md                      # Project documentation and setup guide
 ```
 
 ---
